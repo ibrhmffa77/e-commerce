@@ -1,0 +1,87 @@
+
+    .header{
+        width: 100%;
+    position: fixed;
+    top: 0; 
+    z-index: 1000; 
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+     
+       
+    
+        .container{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 1250px;
+            margin: 0 auto;
+            padding: 5px;
+            
+    
+            .header-title{
+                width: 215px;
+                 a{
+                    text-decoration: none;
+                    font-size: 24px;
+                    padding: 5px 8px;
+                    color: #000000E6;
+                    
+                 }
+            }
+            .header-navbar{
+                display: flex;
+                
+                ul{
+                    display: flex;
+                    gap: 25px;
+                    justify-content: center;
+                    list-style: none;
+                    li a{
+                        text-decoration: none;
+                        font-size: 16px;
+                        color: #00000080;
+                        &:hover{
+                            color: #000000E6;
+                        }
+                    }
+                    .active {
+                        color: #000000E6; 
+                        font-weight: bold; 
+                      }
+                }
+                
+                }
+                .header-button{
+                    display: flex;
+                    justify-content: end;
+                    gap: 10px;
+                    align-items: center;
+    
+                    button{
+                        width: 100px;
+                        font-size: 15px;
+                        padding: 8px 12px;
+                        margin: 8px;
+                        display: flex;
+                        align-items: center;
+                        gap: 5px;
+                        border-radius: 5px;
+                        border: 1px solid #212529;
+                        
+                        &:hover{
+                            background-color: #212529;
+                            a, .btnIcons{
+                                color: white;
+                            }
+                        }
+                        a, .btnIcons{
+                            color: #212529;
+                            text-decoration: none;
+                        
+                        }
+                    }
+            }
+        }
+    }
+
