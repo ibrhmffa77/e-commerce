@@ -1,0 +1,38 @@
+.container{
+
+    p{
+        font-size: 20px;
+        color: #212529;
+    }
+    .our-product{
+        width: 100%;
+        padding: 30px;
+        color: #212529;
+        .our-product-card{
+            padding: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            .our-product-card-item{
+                width: 300px;
+                border-radius: 5px;
+                box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+                .our-product-card-img{
+                    width: 300px;
+    
+                    img{
+                        width: 100%;
+                    }
+                }
+                .card-title{
+                    text-align: center;
+                    padding: 5px;
+                   h5{
+                    font-size: 20px;
+                    color: #212529;
+                   }
+                }
+            }
+        }
+    }
+}

@@ -1,11 +1,10 @@
 .card-item{
-    width: 350px;
-    margin-top: 20px;
-    padding: 15px;
+        margin-top: 20px;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
     .card-item-img{
-        width: 350px;
+        width: 330px;
         line-height: 0%;
+        padding: 10px;
          
         img{
             width: 100%;
@@ -20,14 +19,17 @@
         color: #212529;
     }
     p{
+
         font-size: 16px;
         color: #212529;
     }
+    
     .card-item-btn{
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 20px;
+        padding: 15px;
           button{
             padding: 6px 12px;
             border-radius: 5px;

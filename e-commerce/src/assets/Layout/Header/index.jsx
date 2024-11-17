@@ -19,16 +19,16 @@ export default function Header() {
        <div className='header-navbar'>
          <ul>
           <li>
-            <NavLink to='/' exact activeClassName="active">Home</NavLink>
+            <NavLink to='/' className={({ isActive }) => (isActive ? 'active' : '')}>Home</NavLink>
           </li>
           <li>
-            <NavLink to='/products' activeClassName="active">Products</NavLink>
+            <NavLink to='/products' className={({ isActive }) => (isActive ? 'active' : '')}>Products</NavLink>
           </li>
           <li>
-            <NavLink to='/about' activeClassName="active">About</NavLink>
+            <NavLink to='/about' className={({ isActive }) => (isActive ? 'active' : '')}>About</NavLink>
           </li>
           <li>
-            <NavLink to='/contact'activeClassName="active" >Contact</NavLink>
+            <NavLink to='/contact' className={({ isActive }) => (isActive ? 'active' : '')} >Contact</NavLink>
           </li>
          </ul>
          

@@ -12,9 +12,7 @@ import Cart from './assets/Pages/Cart'
 function App() {
 
   return (
-    <BrowserRouter
-    
-    >
+    <BrowserRouter>
       <Header />
       <Routes>
         <Route path='/' element={<Home />} />
@@ -22,8 +20,8 @@ function App() {
         <Route path='/about' element={<About />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/login' element={<Login />} />
-        <Route path='/register' element={<Register/>} />
-        <Route path='/cart' element={<Cart/>} />
+        <Route path='/register' element={<Register />} />
+        <Route path='/cart' element={<Cart />} />
       </Routes>
       <Footer />
     </BrowserRouter>
