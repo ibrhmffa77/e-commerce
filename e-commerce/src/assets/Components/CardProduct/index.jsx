@@ -1,84 +1,72 @@
-import React from 'react'
-import './cardProduct.scss'
+import React, { useState, useEffect } from 'react';
+import './cardProduct.scss';
 
 export default function CardProduct() {
-  return (
-    <>
-    <div className="card-item">
-        <div className="card-item-img">
-            <img src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" alt="bag" />
-        </div>
-        <h5>Cantanin adi</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, quo?</p>
-        <hr />
-        <p>Price</p>
-        <hr />
-        <div className="card-item-btn">
-            <button>Buy Now</button>
-            <button>Add to Cart</button>
-        </div>
+    const [product, setProduct] = useState([]);
+    const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(false);
 
-    </div>
-    <div className="card-item">
-        <div className="card-item-img">
-            <img src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" alt="bag" />
-        </div>
-        <h5>Cantanin adi</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, quo?</p>
-        <hr />
-        <p>Price</p>
-        <hr />
-        <div className="card-item-btn">
-            <button>Buy Now</button>
-            <button>Add to Cart</button>
-        </div>
+    const fetchProducts = async () => {
+        setLoading(true);
+        try {
+            const response = await fetch('https://fakestoreapi.com/products');
+            if (!response.ok) {
+                throw new Error('Məlumatları çəkə bilmədik!');
+            }
+            const data = await response.json();
+            setProduct(data);
+        } catch (error) {
+            setError(error.message);
+        } finally {
+            setLoading(false);
+        }
+    };
 
-    </div>
-    <div className="card-item">
-        <div className="card-item-img">
-            <img src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" alt="bag" />
-        </div>
-        <h5>Cantanin adi</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, quo?</p>
-        <hr />
-        <p>Price</p>
-        <hr />
-        <div className="card-item-btn">
-            <button>Buy Now</button>
-            <button>Add to Cart</button>
-        </div>
+    const addToCard = (product) => {
+        const exitingCard = JSON.parse(localStorage.getItem('card')) || [];
+        const productExiting = exitingCard.find((item) => item.id === product.id);
 
-    </div>
-    <div className="card-item">
-        <div className="card-item-img">
-            <img src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" alt="bag" />
-        </div>
-        <h5>Cantanin adi</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, quo?</p>
-        <hr />
-        <p>Price</p>
-        <hr />
-        <div className="card-item-btn">
-            <button>Buy Now</button>
-            <button>Add to Cart</button>
-        </div>
+        let updatedCard;
+        if (productExiting) {
+            updatedCard == exitingCard.map((item) =>
+        item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+        );
+        }
+        else{
+            updatedCard = [ ...exitingCard, { ...product, quantity: 1}]
+        }
+        localStorage.setItem('card', JSON.stringify(updatedCard))
 
-    </div>
-    <div className="card-item">
-        <div className="card-item-img">
-            <img src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" alt="bag" />
-        </div>
-        <h5>Cantanin adi</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, quo?</p>
-        <hr />
-        <p>Price</p>
-        <hr />
-        <div className="card-item-btn">
-            <button>Buy Now</button>
-            <button>Add to Cart</button>
-        </div>
+        updateCard(updatedCard.length);
+        };
+    
 
-    </div>
-    </>
-  )
+    useEffect(() => {
+        fetchProducts();
+    }, []);
+
+    return (
+        <>
+            {loading && <p>Yüklənir...</p>}
+            {error && <p>{error}</p>}
+            <div className="productCard">
+                {product.map((product) => (
+                    <div className="card-item" key={product.id}>
+                        <div className="card-item-img">
+                            <img src={product.image} alt={product.title} />
+                        </div>
+                        <h5>{product.title.substring(0, 20)}...</h5>
+                        <p>{product.description.substring(0, 60)}...</p>
+                        <hr />
+                        <p>${product.price}</p>
+                        <hr />
+                        <div className="card-item-btn">
+                            <button>Buy Now</button>
+                            <button onClick={() => addToCart(product)}>Add to Cart</button>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </>
+    );
 }

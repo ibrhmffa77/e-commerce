@@ -16,9 +16,9 @@ export default function LatestProduct() {
         <button className='electronicsBtn'>Electronics</button>
     </div>
 
-    <div className="productCard">
+    
            <CardProduct/>
-    </div>
+ 
    </div>
    </>
   )
