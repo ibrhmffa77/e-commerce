@@ -1,8 +1,13 @@
 import React from 'react'
 import './contact.scss'
+import { Helmet } from 'react-helmet'
 
 export default function Contact() {
   return (
+    <>
+    <Helmet>
+    <title>E-Commerce Contact</title>
+   </Helmet>
     <div className="container">
       <h1>Contact Us</h1>
       <hr />
@@ -20,5 +25,8 @@ export default function Contact() {
         <button className='center' type="submit">Send</button>
       </form>
     </div>
+    </>
   )
+ 
 }
+

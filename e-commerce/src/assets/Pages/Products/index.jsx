@@ -7,7 +7,7 @@ export default function Products
     return (
        <>
        <Helmet>
-        <title>Products</title>
+        <title>E-Commerce Products</title>
        </Helmet>
        <LatestProduct/>
        </>

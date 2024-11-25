@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
    <Helmet>
-    <title>Home</title>
+    <title>E-Commerce</title>
    </Helmet>
    <div className="card-img">
     <img src="https://reactjs-ecommerce-app.vercel.app/assets/main.png.jpg" alt="nature" />

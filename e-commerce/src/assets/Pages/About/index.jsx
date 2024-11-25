@@ -1,9 +1,13 @@
 import React from 'react'
 import './about.scss'
+import { Helmet } from 'react-helmet'
 
 export default function About() {
   return (
     <>
+    <Helmet>
+    <title>E-Commerce About</title>
+   </Helmet>
     <div className="container">
              <h1>About Us</h1>
              <hr />
