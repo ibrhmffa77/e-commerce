@@ -4,6 +4,7 @@ import './home.scss'
 import LatestProduct from '../../Components/LatestProduct'
 
 export default function Home() {
+  
   return (
     <>
    <Helmet>

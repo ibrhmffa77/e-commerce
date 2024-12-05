@@ -4,6 +4,7 @@ import CardProduct from '../CardProduct';
 
 export default function LatestProduct() {
   const [selectedCategory, setSelectedCategory] = useState('all'); 
+ 
 
   return (
     <div className="container">

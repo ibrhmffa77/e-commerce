@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './cardProduct.scss';
 
-export default function CardProduct({ category }) {
+export default function CardProduct({ category, updateCart}) {
   const [product, setProduct] = useState([]);
   const [filteredProduct, setFilteredProduct] = useState([]); // Filtrlənmiş məhsullar
   const [error, setError] = useState(null);

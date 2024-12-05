@@ -1,0 +1,28 @@
+.cart-empty{
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    h2{
+        font-size: 40px;
+        color: #212529;
+    }
+    button{
+        width: 200px;
+        padding: 8px;
+        margin-top: 20px;
+        gap: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+
+        a{
+            text-decoration: none;
+            color: #212529;
+        }
+        
+       
+    }
+}
