@@ -1,6 +1,6 @@
 import React from 'react'
 import {FaArrowLeft } from 'react-icons/fa'
-import './emptyCart.scss'
+import './emptyCard.scss'
 import { Link } from 'react-router-dom'
 
 export default function EmptyCart() {

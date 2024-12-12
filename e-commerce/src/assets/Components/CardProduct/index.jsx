@@ -28,6 +28,26 @@ export default function CardProduct({ category, updateCart}) {
     fetchProducts();
   }, []);
 
+  const addToCart = (product) => {
+    const existingCart = JSON.parse(localStorage.getItem('cart')) || [];
+    const productExists = existingCart.find((item) => item.id === product.id);
+  
+    let updatedCart;
+    if (productExists) {
+      updatedCart = existingCart.map((item) =>
+        item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+      );
+    } else {
+      updatedCart = [...existingCart, { ...product, quantity: 1 }];
+    }
+  
+    localStorage.setItem('cart', JSON.stringify(updatedCart));
+  
+ 
+    window.dispatchEvent(new Event('storage'));
+  };
+  
+
   useEffect(() => {
     if (category === 'all') {
       setFilteredProduct(product); 

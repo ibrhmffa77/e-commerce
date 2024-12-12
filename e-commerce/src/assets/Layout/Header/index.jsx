@@ -7,7 +7,7 @@ import { RiShoppingCart2Fill } from "react-icons/ri";
 
 
 
-export default function Header() {
+export default function Header({ cartCount }) {
   return (
      <div className="header">
       <div className="container">
@@ -36,7 +36,7 @@ export default function Header() {
        <div className="header-button">
           <button className='login'> <FaArrowRightToBracket className='btnIcons'/><Link to='/login'>Login</Link></button>
           <button className='register'> <BsFillPersonPlusFill className='btnIcons'/><Link to='/register'> Register</Link></button>
-          <button className='cart'> <RiShoppingCart2Fill className='btnIcons'/><Link to='/cart'> Cart <span className='counter'>(0)</span></Link></button>
+          <button className='cart'> <RiShoppingCart2Fill className='btnIcons'/><Link to='/cart'> Cart <span className='counter'>({cartCount})</span></Link></button>
 
          </div>
       </div>

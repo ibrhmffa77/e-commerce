@@ -3,8 +3,7 @@ import './latestProduct.scss';
 import CardProduct from '../CardProduct';
 
 export default function LatestProduct() {
-  const [selectedCategory, setSelectedCategory] = useState('all'); 
- 
+  const [selectedCategory, setSelectedCategory] = useState('all');
 
   return (
     <div className="container">
@@ -28,7 +27,7 @@ export default function LatestProduct() {
         </button>
       </div>
 
-      <CardProduct category={selectedCategory} />
+      <CardProduct category={selectedCategory} updateCart={() => {}} />
     </div>
   );
 }
